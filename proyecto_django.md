@@ -1,11 +1,4 @@
-Nombre del Módulo Desarrollo de Aplicaciones Web con Python Django
-Experiencia de Aprendizaje Actividad N° 2 – Instalación y Creación de un Proyecto Django
-Tipo Encargo
-Tiempo Estimado «Definir por parte del docente»
-Objetivos
-• Instalar Django correctamente dentro de un entorno virtual.
-• Crear y ejecutar un nuevo proyecto Django desde consola.
-• Comprender la estructura inicial de carpetas y archivos que conforman un proyecto Django.
+
 
 Instrucciones
 Crea una carpeta llamada actividad_m6_l2 y dentro de ella un documento llamado proyecto_django.md. En él
@@ -13,20 +6,24 @@ deberás registrar todo el proceso de creación y configuración inicial de un p
 1. Instalación en entorno virtual
 Desde tu terminal, ejecuta los siguientes pasos y explica en cada uno qué está ocurriendo:
 
-Comenta: ¿Qué es pip?
-   Es el sistema de gestión de paquetes estándar para Python. Básicamente, es la herramienta que te permite descargar e instalar librerías y dependencias que no vienen incluidas en la instalación básica de Python 
+__Comenta: ¿Qué es pip?__
+
+     **Es el sistema de gestión de paquetes estándar para Python. Básicamente, es la herramienta que te permite** 
+     **descargare** instalar librerías y dependencias que no vienen incluidas en la instalación básica de Python **
 
 
- ¿Qué ventajas ofrece instalar Django dentro de un entorno virtual?
+ __¿Qué ventajas ofrece instalar Django dentro de un entorno virtual?__
 
-    Un entorno virtual es un espacio aislado  donde se puede instalar versiones específicas de librerías para un proyecto sin afectar a los demás proyectos ni al Python "global" del sistema.
+     **Un entorno virtual es un espacio aislado  donde se puede instalar versiones específicas de librerías para un**
+      **proyecto sin afectar a los demás proyectos ni al Python "global" del sistema.**
 
     
 2. Crear el proyecto
-• Crea el proyecto con el comando:
 
-• Copia la estructura generada por Django y pégala en tu archivo .md 
-    .
+
+• __Copia la estructura generada por Django y pégala en tu archivo .md__ 
+
+    .   ```
         ├── README.md
         ├── manage.py
         ├── mi_sitio
@@ -37,14 +34,23 @@ Comenta: ¿Qué es pip?
         │   └── wsgi.py
         ├── proyecto_django.md
         └── requirements.txt
+        
 
+__explicando para qué sirve cada uno de los siguientes elementos:__
 
-explicando para qué sirve cada uno de los siguientes elementos:
-• manage.py
-• mi_sitio/__init__.py es un archivo que se genera automaticamente, para decir que es un modulo de python 
-• mi_sitio/settings.py
-• mi_sitio/urls.py
+• manage.py:    **Es un script de Python que Django crea automáticamente en la raíz de tu proyecto. Su función principal** 
+                **es servir de puente entre la línea de comandos (tu terminal) y las entrañas de Django,permitiéndote ejecutar tareas de administración, arrancar el servidor o gestionar la base de datos**
+
+• mi_sitio/__init__.py: **es un archivo que se genera automaticamente, para decir que es un modulo de python**
+
+• mi_sitio/settings.py: **archivo de configuración de Python donde defines cómo debe comportarse tu aplicación**
+                        **con qué bases de datos se comunica, qué funciones de seguridad están activas**
+
+• mi_sitio/urls.py:         **Su función principal es conectar las URLs que los usuarios escriben en sus navegadores**
+                            **(como /contacto/ o /productos/) con las vistas (el código Python en views.py) que deben responder a esa petición**
 • mi_sitio/asgi.py
+
+
 • mi_sitio/wsgi.py
 
 
@@ -55,7 +61,8 @@ explicando para qué sirve cada uno de los siguientes elementos:
 • Visita http://127.0.0.1:8000/ y toma una captura de pantalla mostrando que el servidor funciona
 correctamente.
 
-    ![image](//workspaces/actividad_m6_l2/Cohete Django.png)
+![image](Cohete_Django.png)
+
 4. Crear una aplicación
 • Crea una aplicación llamada principal:
 
