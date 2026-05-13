@@ -38,20 +38,18 @@ __Comenta: ¿Qué es pip?__
 
 __explicando para qué sirve cada uno de los siguientes elementos:__
 
-• manage.py:    **Es un script de Python que Django crea automáticamente en la raíz de tu proyecto. Su función principal** 
-                **es servir de puente entre la línea de comandos (tu terminal) y las entrañas de Django,permitiéndote ejecutar tareas de administración, arrancar el servidor o gestionar la base de datos**
+    • manage.py:    Es un script de Python que Django  crea automáticamente en la raíz de tu proyecto. Su función principal es servir de puente entre la línea de comandos (tu terminal) y las entrañas de Django,permitiéndote ejecutar tareas de administración, arrancar el servidor o gestionar la base de datos.
 
-• mi_sitio/__init__.py: **es un archivo que se genera automaticamente, para decir que es un modulo de python**
+    • mi_sitio/__init__.py: Es un archivo que se genera automaticamente, para decir que es un modulo de python
 
-• mi_sitio/settings.py: **archivo de configuración de Python donde defines cómo debe comportarse tu aplicación**
-                        **con qué bases de datos se comunica, qué funciones de seguridad están activas**
+    • mi_sitio/settings.py: archivo de configuración de Python donde defines cómo debe comportarse tu aplicación con qué bases de datos se comunica, qué funciones de seguridad están activas
 
-• mi_sitio/urls.py:         **Su función principal es conectar las URLs que los usuarios escriben en sus navegadores**
-                            **(como /contacto/ o /productos/) con las vistas (el código Python en views.py) que deben responder a esa petición**
-• mi_sitio/asgi.py
+    • mi_sitio/urls.py: Su función principal es conectar las URLs que los usuarios escriben en sus navegadores (como /contacto/ o /productos/) con las vistas (el código Python en views.py) que deben responder a esa petición
+
+    • mi_sitio/asgi.py:  Es el archivo que permite  que tu proyecto de Django deje de ser "tradicional"(donde el usuario pide una página, el servidor responde y se corta la conexión) y se convierta en una aplicación asíncrona y en tiempo real**
 
 
-• mi_sitio/wsgi.py
+    • mi_sitio/wsgi.py:  Es el punto de entrada estándar y tradicional para que un servidor web de producción se comuniquecon tu proyecto Django
 
 
 
@@ -67,8 +65,23 @@ correctamente.
 • Crea una aplicación llamada principal:
 
 • Explica brevemente:
-• ¿Qué diferencia hay entre un “proyecto” y una “aplicación” en Django?
-• ¿Qué carpetas se generan dentro de la app principal?
+__¿Qué diferencia hay entre un “proyecto” y una “aplicación” en Django?__
+
+    Un proyecto es una web completa, mientras que una aplicación es una sección o función específica de esa web.
+
+
+• __¿Qué carpetas se generan dentro de la app principal?__
+
+    ```    
+    principal/
+    ├── migrations/         
+    │   └── __init__.py
+    ├── __init__.py
+    ├── admin.py
+    ├── apps.py
+    ├── models.py
+    ├── tests.py
+    └── views.py
 
 5. Configuración del proyecto
 • Agrega 'principal' al INSTALLED_APPS de settings.py.
@@ -82,24 +95,13 @@ correctamente.
         "django.contrib.staticfiles",
         "principal"
         ]
-• Crea un archivo urls.py dentro de la app principal y configura el enrutamiento en mi_sitio/urls.py para
+• Crea un archivo urls.py dentro de la app principal y
+ configura el enrutamiento en mi_sitio/urls.py para
 que dirija hacia esa app.
-Puedes usar una vista sencilla que devuelva HttpResponse("¡Bienvenido a mi sitio!").
 
-Entregables
-• Carpeta comprimida (.zip) que contenga:
-• El archivo proyecto_django.md con toda la explicación y comandos utilizados
-• Una captura de pantalla del servidor funcionando
-• (Opcional) El proyecto Django en versión
+        from django.shortcuts import render
+        from django.http import HttpResponse
 
+        def home(request):
+        return HttpResponse ("Hola es mi App Principal")
 
-1. Instalación en entorno virtual
-Desde tu terminal, ejecuta los siguientes pasos y explica en cada uno qué está ocurriendo:
-
-    Comenta: ¿Qué es pip? 
-
-       Es el sistema de gestión de paquetes estándar para Python. Básicamente, es la herramienta que te permite descargar e instalar librerías y dependencias que no vienen incluidas en la instalación básica de Python
-
-   ¿Qué ventajas ofrece instalar Django dentro de un entorno virtual?    
-
-        Un entorno virtual es un espacio aislado  donde se puede instalar versiones específicas de librerías para un proyecto sin afectar a los demás proyectos ni al Python "global" del sistema.
