@@ -54,6 +54,8 @@ explicando para qué sirve cada uno de los siguientes elementos:
 
 • Visita http://127.0.0.1:8000/ y toma una captura de pantalla mostrando que el servidor funciona
 correctamente.
+
+    ![image](//workspaces/actividad_m6_l2/Cohete Django.png)
 4. Crear una aplicación
 • Crea una aplicación llamada principal:
 
@@ -63,6 +65,16 @@ correctamente.
 
 5. Configuración del proyecto
 • Agrega 'principal' al INSTALLED_APPS de settings.py.
+
+     INSTALLED_APPS = [
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+        "principal"
+        ]
 • Crea un archivo urls.py dentro de la app principal y configura el enrutamiento en mi_sitio/urls.py para
 que dirija hacia esa app.
 Puedes usar una vista sencilla que devuelva HttpResponse("¡Bienvenido a mi sitio!").
